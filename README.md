@@ -22,14 +22,14 @@ Core DBMS concepts applied in this project include:
 - Role-based access control using DCL statements
 
 Usage Instructions:
--- The system receives the member ID, book ID, and number of borrowing days, and then starts a transaction to make
-sure all steps are done safely together. It checks if the requested book has available copies using a
-locked selection to prevent other changes at the same time. If no copies are available, the system stops
-and shows an error. If copies are available, the system adds a record to the Borrowings table and
-reduces the number of available copies in the Inventory by one. Finally, the transaction is committed,
-saving all changes permanently and keeping the data accurate. This process ensures that borrowing is
-safe, consistent, and free from errors or data
-conflicts. --
+- The system receives the Member ID, Book ID, and number of borrowing days.
+- A database transaction is started to ensure all operations are executed safely as a single unit.
+- The system checks whether the requested book has available copies, using a locked selection to prevent simultaneous updates by other transactions.
+- If no copies are available, the transaction is stopped and an error message is returned.
+- If copies are available:
+- A new record is inserted into the Borrowings table.
+- The number of available copies in the Inventory is reduced by one.
+- The transaction is then committed, permanently saving all changes.
 
 --
 
