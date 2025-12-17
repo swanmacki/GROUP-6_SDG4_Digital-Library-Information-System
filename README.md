@@ -20,3 +20,19 @@ Core DBMS concepts applied in this project include:
 - Stored procedures, functions, and triggers
 - Transaction management for borrowing and returning books
 - Role-based access control using DCL statements
+
+Usage Instructions:
+- The system receives the member ID, book ID, and number of borrowing days, and then starts a transaction to make
+sure all steps are done safely together. It checks if the requested book has available copies using a
+locked selection to prevent other changes at the same time. If no copies are available, the system stops
+and shows an error. If copies are available, the system adds a record to the Borrowings table and
+reduces the number of available copies in the Inventory by one. Finally, the transaction is committed,
+saving all changes permanently and keeping the data accurate. This process ensures that borrowing is
+safe, consistent, and free from errors or data
+conflicts.
+
+MEMBERS AND CONTRIBUTIONS:
+CASTILLO, JAKE LAWRENCE - Normalization 3NF/BCNF
+MAMAYSON, JOHN MICHAEL - Complex DQL
+MALAZARTE, KEVINCE LEE – TRIGGER, STORED PROCEDURE
+SORIANO, MARK LEEROY - ERD/FLOWCHART
